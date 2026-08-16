@@ -65,6 +65,12 @@ bot.on('time', function() {
 bot.on('spawn', function() {
   connected = 1;
   console.log("Bot spawned in server!");
+
+  // Sunucu şifre istiyorsa otomatik giriş yapma komutu
+  setTimeout(() => {
+    bot.chat('/register Sifreniz123 Sifreniz123');
+    bot.chat('/login Sifreniz123');
+  }, 2000);
 });
 
 bot.on('error', function(err) {
