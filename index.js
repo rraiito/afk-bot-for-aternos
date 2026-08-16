@@ -78,5 +78,8 @@ bot.on('error', function(err) {
 });
 
 bot.on('end', function() {
-  console.log("Bot disconnected");
+  console.log("Bot disconnected, reconnecting in 5 seconds...");
+  setTimeout(() => {
+    process.exit(1); // Render süreci yeniden başlatıp botu tekrar sokacaktır
+  }, 5000);
 });
